@@ -1,4 +1,7 @@
 # ADD LOCAL CONFIGURATION HERE
+[user]
+        name = Hugh Watkins
+        email = hwatkins@mergate.com
 
 
 # DO NOT EDIT BELOW THIS LINE
@@ -6,6 +9,20 @@
 	diff = auto
 	status = auto
 	branch = auto
+        ui = auto
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
 [core]
 	excludesfile = ~/.gitignore
 [alias]
@@ -18,3 +35,6 @@
   plre = pull --rebase
   st = status
   out = log origin..HEAD
+  put = push origin HEAD
+[merge]
+        tool = vimdiff
