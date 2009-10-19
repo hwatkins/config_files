@@ -11,7 +11,7 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
-
+set title
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -173,4 +173,7 @@ set smartcase
 
 " Tags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+
+noremap <f1> :set gfn=Inconsolata\ 32<CR>
+noremap <f2> :set gfn=Inconsolata\ 3<CR>
 
