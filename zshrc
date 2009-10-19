@@ -30,5 +30,5 @@ setopt histignoredups
 
 # keep more history
 export HISTSIZE=200
-
-export PATH=~/bin:$PATH
+export CVSROOT=':pserver:hwatkins@cvs:/usr/local/cvsroot'
+export PATH=~/bin:/usr/local/bin:/opt/local/bin:$PATH
