@@ -76,6 +76,8 @@ set laststatus=2
 
 " \ is the leader character
 let mapleader = "\\"
+" ignore error for non-ruby vim 
+let g:LustyJugglerSuppressRubyWarning = 1
 
 " Edit the README_FOR_APP (makes :R commands work)
 map <Leader>R :e doc/README_FOR_APP<CR>
