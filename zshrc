@@ -32,3 +32,5 @@ setopt histignoredups
 export HISTSIZE=200
 export CVSROOT=':pserver:hwatkins@cvs:/usr/local/cvsroot'
 export PATH=~/bin:/usr/local/bin:/opt/local/bin:$PATH
+
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
