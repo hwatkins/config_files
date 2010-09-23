@@ -72,6 +72,10 @@ function! RubyDebugger.receive_command() dict
 endfunction
 
 
+function! RubyDebugger.send_command_wrapper(command)
+  call g:RubyDebugger.send_command(a:command)
+endfunction
+
 " We set function this way, because we want have possibility to mock it by
 " other function in tests
 let RubyDebugger.send_command = function("<SID>send_message_to_debugger")
@@ -226,6 +230,13 @@ function! RubyDebugger.exit() dict
   call g:RubyDebugger.queue.add("exit")
   call s:clear_current_state()
   call g:RubyDebugger.queue.execute()
+endfunction
+
+
+" Show output log of Ruby script
+function! RubyDebugger.show_log() dict
+  exe "view " . s:server_output_file
+  setlocal autoread
 endfunction
 
 
