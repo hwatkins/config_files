@@ -11,16 +11,14 @@ set guioptions-=r
 set guioptions-=L
 set guioptions-=R
 
-if split(system('uname'))[0] == 'Darwin'
 	if has('gui_running')
 		set guifont=Monaco:h11
+		set background=light
+	else
+    		set background=light
+		set t_Co=16
 	endif
-elseif $TERM =~ 'xterm'
-	set t_Co=256
-	colorscheme peaksea
-elseif $TERM =~ 'rxvt-unicode'
-	colorscheme riri
-endif
+colorscheme solarized
 
 set nocompatible
 set history=100
@@ -73,8 +71,8 @@ autocmd FileType c,cpp map <buffer> <silent> <Leader>e :call g:ClangUpdateQuickF
 " Vimerl plugin:
 let erlang_folding     = 1
 let erlang_show_errors = 0
-let erlang_skel_header = {'author': 'Ricardo Catalinas Jiménez <jimenezrick@gmail.com>',
-		       \  'owner' : 'Ricardo Catalinas Jiménez'}
+let erlang_skel_header = {'author': 'Hugh Watkins <hwatkins@mergate.com>',
+		       \  'owner' : 'Hugh Watkins'}
 
 " Syntastic plugin:
 let syntastic_auto_loc_list = 1
@@ -88,7 +86,7 @@ autocmd FileType haskell map <buffer> <silent> <Leader>t :GhcModType<Enter>
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let $PATH = $PATH . ':' . expand('~/.cabal/bin')
 
-match Todo /TODO\|FIXME\|XXX\|FUCKME/
+match Todo /TODO\|FIXME/
 
 map <Up>    {
 map <Down>  }
@@ -102,7 +100,7 @@ map <silent> <F4>  :make<Enter>
 map <silent> <F5>  :shell<Enter>
 map <silent> <F6>  :if <SID>ToggleAutoHighlight()<Bar>set hlsearch<Bar>else<Bar>nohlsearch<Bar>endif<Enter>
 map <silent> <F7>  :TagbarToggle<Enter>
-map <silent> <F8>  :vimgrep /TODO\\|FIXME\\|XXX\\|FUCKME/ %<Enter>:copen<Enter>
+map <silent> <F8>  :vimgrep /TODO\\|FIXME/ %<Enter>:copen<Enter>
 map <silent> <F9>  :checktime<Enter>
 map <silent> <F11> :w!<Enter>:!aspell check %<Enter>:w %<Enter>
 map <silent> <F12> :SpellThis<Enter>
