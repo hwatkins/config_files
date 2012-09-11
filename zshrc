@@ -33,4 +33,7 @@ export HISTSIZE=200
 export CVSROOT=':pserver:hwatkins@cvs:/usr/local/cvsroot'
 export PATH=~/bin:/usr/local/bin:/opt/local/bin:$PATH
 
+#export http_proxy=www-proxy.exu.ericsson.se:8080
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
