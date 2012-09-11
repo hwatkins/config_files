@@ -20,7 +20,17 @@ This Vim plugin implements interactive Ruby debugger in Vim.
 
 2.  ruby-debug-ide gem.
 3.  For linux: 'lsof' program.
+4.  For OS X:
 
+    The vim that ships with OS X does not use ruby, nor does it support --servername, so MacVim must be used.
+
+    Make sure that both MacVim, and mvim are installed.
+
+    If they are not, you can use homebrew (http://mxcl.github.com/homebrew/):
+
+        brew install macvim
+
+    This will install MacVim, along with the mvim command line utility.
 
 # Installation #
 
@@ -32,18 +42,27 @@ This Vim plugin implements interactive Ruby debugger in Vim.
 
         http://github.com/astashov/vim-ruby-debugger/tarball/master
 
-2.  Copy contents of 'vim' folder to your ~/.vim/ (or to ~/.vim/bundle/vim-ruby-debugger if you use pathogen). You should have 4 files there then: **~/.vim/autoload/ruby_debugger.vim**, **~/.vim/plugin/ruby_debugger.vim**, **~/.vim/bin/ruby_debugger.rb** and **~/.vim/doc/ruby_debugger.txt**
-    First file is a debugger plugin loader, second is a debugger itself, third is a small ruby script, that makes interaction between the VIM and the ruby-debug-ide gem. Fourth is a documentation file.
+    You will get the 'vim-ruby-debugger' dir with the plugin.
 
-3.  Generate local tags file
+2.  Copy contents of the 'vim-ruby-debugger' dir to your ~/.vim/ (or to ~/.vim/bundle/vim-ruby-debugger if you use pathogen).
+
+3.  Generate the local tags file
 	
         :helptags ~/.vim/doc
 
     Now, you can use
-    
+
         :help ruby-debugger
-        
+
     to get help for the ruby-debugger plugin.
+
+4.  If using MacVim:
+
+    Modify your ~/.vimrc to add the following line:
+
+    ```VimL
+    let g:ruby_debugger_progname = 'mvim'
+    ```
 
 I've tested the plugin in Windows and Linux. All tests should be passed there.
 
@@ -54,11 +73,11 @@ I've tested the plugin in Windows and Linux. All tests should be passed there.
     servername explicitly, e.g., **vim --servername VIM**
 
 2.  Go to the directory with some your Rails application.
-         
+
          :cd ~/projects/rails
 
 3.  Run Server with Debugger:
-   
+
          :Rdebugger
 
     It will kill any listeners of ports 39767 and 39768 and run rdebug-ide and ~/.vim/bin/ruby_debugger.rb on these ports accordingly.
@@ -80,7 +99,7 @@ I've tested the plugin in Windows and Linux. All tests should be passed there.
 
 If you want to run tests, replace in /autoload directory ruby_debugger.vim to **ruby_debugger.vim** from additionals/autoload directory.
 And then, in command mode execute
-  
+
          :call g:TU.run()
 
 
