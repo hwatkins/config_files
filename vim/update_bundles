@@ -17,6 +17,7 @@ git_bundles = [
   "git://github.com/tpope/vim-repeat.git",
   "git://github.com/tpope/vim-surround.git",
   "git://github.com/tpope/vim-vividchalk.git",
+  "git://github.com/jnurmine/Zenburn.git",
   "git://github.com/tsaleh/vim-shoulda.git",
   "git://github.com/tsaleh/vim-supertab.git",
   "git://github.com/tsaleh/vim-tcomment.git",

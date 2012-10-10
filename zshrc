@@ -14,10 +14,10 @@ if [ -e "$HOME/.aliases" ]; then
 fi
 
 # vi mode
-bindkey -v
+#bindkey -v
 
 # use incremental search
-bindkey ^R history-incremental-search-backward
+#bindkey ^R history-incremental-search-backward
 
 # expand functions in the prompt
 setopt prompt_subst
@@ -33,7 +33,9 @@ export HISTSIZE=200
 export CVSROOT=':pserver:hwatkins@cvs:/usr/local/cvsroot'
 export PATH=~/bin:/usr/local/bin:/opt/local/bin:$PATH
 
-#export http_proxy=www-proxy.exu.ericsson.se:8080
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export rvm_project_rvmrc=1
+setopt nullglob
+__rvm_project_rvmrc

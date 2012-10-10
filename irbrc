@@ -15,6 +15,8 @@ require 'irb/ext/save-history'
 IRB.conf[:SAVE_HISTORY] = 100
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
 
+IRB.conf[:BACK_TRACE_LIMIT] = 100
+
 # Easily print methods local to an object's class
 class Object
   def local_methods

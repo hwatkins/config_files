@@ -10,15 +10,19 @@ set guioptions-=l
 set guioptions-=r
 set guioptions-=L
 set guioptions-=R
-
-	if has('gui_running')
-		set guifont=Monaco:h11
-		set background=light
-	else
-    		set background=light
-		set t_Co=16
-	endif
+" colorscheme vividchalk
 colorscheme solarized
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
+set background=dark
+
+if has('gui_running')
+	set guifont=Monaco:h12
+else
+	set t_Co=256
+	hi Normal ctermfg=green ctermbg=black
+
+endif
 
 set nocompatible
 set history=100
