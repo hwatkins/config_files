@@ -95,6 +95,13 @@ If your project uses Rebar, Vimerl will search the value of "deps_dir" in
 "rebar.config", with "deps/" as default, to also let you use omni completion
 on dependency modules.
 
+A cache file is created in the "autoload/" directory where Vimerl is installed
+or in "/tmp" if "autoload/" is not writeable. This cache file stores all the
+modules information.
+
+If the cached information about a module becomes outdated, you can use the
+|:ErlangPurgeCache| command to remove that information from the cache.
+
 Note: the user is responsible for having compiled his project so that Vimerl
       finds the .beam files.
 
@@ -156,8 +163,17 @@ Loads an OTP gen_fsm skeleton: >
                                                              *:ErlangGenEvent*
 Loads an OTP gen_event skeleton: >
 	:ErlangGenEvent
+<
+                                                           *:ErlangCommonTest*
+Loads an OTP common_test skeleton: >
+	:ErlangCommonTest
 
 Note: all the previous commands are applied to the current buffer.
+
+                                                           *:ErlangPurgeCache*
+Removes one or more specified modules from the cache: >
+	:ErlangPurgeCache module1
+	:ErlangPurgeCache module1 module2
 
 ==============================================================================
 4. Options                                                    *vimerl-options*
@@ -227,6 +243,14 @@ process (default: 1, values: 0 or 1): >
 
 Note: it could be useful to disable this cache in order to get always fresh
       info whenever a module is recompiled.
+
+------------------------------------------------------------------------------
+                                            *'erlang_force_use_vimerl_indent'*
+
+Vim 7.4 comes with an Erlang indent script, thus Vimerl tries to use it when
+available. This option forces to use the Vimerl indent script always
+(default: 0, values: 0 or 1): >
+	:let erlang_force_use_vimerl_indent = 0
 
 ==============================================================================
 5. License                                                    *vimerl-license*
