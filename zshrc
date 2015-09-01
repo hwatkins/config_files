@@ -33,9 +33,3 @@ export HISTSIZE=200
 export CVSROOT=':pserver:hwatkins@cvs:/usr/local/cvsroot'
 export PATH=~/bin:/usr/local/bin:/opt/local/bin:$PATH
 
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export rvm_project_rvmrc=1
-setopt nullglob
-__rvm_project_rvmrc
